@@ -14,20 +14,24 @@ function imc() {
         let classificacao = '';
 
         if (valorIMC < 18.5) {
-            classificacao = 'abaixo do peso.'
+            classificacao = 'abaixo do peso.';
         } else if (valorIMC < 25) {
-            classificacao = 'com peso ideal. Parabéns!!!'
+            classificacao = 'com peso ideal. Parabéns!!!';
         } else if (valorIMC < 30) {
             classificacao = 'levemente acima do peso.';
         } else if (valorIMC < 35) {
-            classificacao = 'com obesidade de 1º grau.'
+            classificacao = 'com obesidade de 1º grau.';
         } else if (valorIMC < 40) {
-            classificacao = 'com obesidade de 2ª grau.'
+            classificacao = 'com obesidade de 2ª grau.';
         } else {
-            classificacao = 'com obesidade de 3º grau. Cuidado!!!'
+            classificacao = 'com obesidade de 3º grau. Cuidado!!!';
         }
 
-        resultado.textContent = `${nome}, seu IMC é ${valorIMC} e você está ${classificacao}`;
+        if (valorIMC < 7) {
+            resultado.textContent = `${nome}, por favor, preencha os dados corretamente!!!`;
+        } else {
+            resultado.textContent = `${nome}, seu IMC é ${valorIMC} e você está ${classificacao}`;
+        }
 
 
     } else {
